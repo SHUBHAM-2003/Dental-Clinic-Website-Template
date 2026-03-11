@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'motion/react';
 import Navbar from './components/Navbar';
@@ -8,7 +7,6 @@ import Services from './pages/Services';
 import Kids from './pages/Kids';
 import Contact from './pages/Contact';
 import ScrollToTop from './components/ScrollToTop';
-import PageLoader from './components/PageLoader';
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -26,20 +24,6 @@ function AnimatedRoutes() {
 }
 
 export default function App() {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    // Simulate initial global loading
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (loading) {
-    return <PageLoader />;
-  }
-
   return (
     <Router>
       <ScrollToTop />

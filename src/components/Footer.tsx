@@ -88,7 +88,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} {clinicData.name}. All rights reserved.
           </p>
           <div className="mt-4 md:mt-0">
-            <p className="text-sm text-slate-600 font-medium">Designed for Dental Professionals</p>
+            <p className="text-sm text-slate-600 font-medium">Designed for Dental Professionals by - Infinity Innovations</p>
           </div>
         </div>
       </div>
