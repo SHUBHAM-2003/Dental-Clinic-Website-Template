@@ -13,7 +13,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div className="col-span-1 lg:col-span-1">
-            <Logo className="w-10 h-10 mb-6" textClassName="text-2xl text-white" />
+            <Logo className="h-12 mb-6" />
             <p className="text-sm text-slate-400 mb-6 leading-relaxed">
               {clinicData.tagline}
             </p>
@@ -85,7 +85,7 @@ export default function Footer() {
         
         <div className="mt-16 border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-slate-500">
-            &copy; {new Date().getFullYear()} {clinicData.name}. All rights reserved.
+            &copy; Smile Care Hospital. All rights reserved 2015.
           </p>
           <div className="mt-4 md:mt-0">
             <p className="text-sm text-slate-600 font-medium">Designed for Dental Professionals by - Infinity Innovations</p>

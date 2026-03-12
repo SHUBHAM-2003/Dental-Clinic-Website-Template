@@ -3,6 +3,7 @@ import { AnimatePresence } from 'motion/react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
+import About from './pages/About';
 import Services from './pages/Services';
 import Kids from './pages/Kids';
 import Contact from './pages/Contact';
@@ -15,6 +16,7 @@ function AnimatedRoutes() {
     <AnimatePresence mode="wait">
       <Routes location={location}>
         <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
         <Route path="/kids" element={<Kids />} />
         <Route path="/contact" element={<Contact />} />

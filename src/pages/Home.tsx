@@ -6,6 +6,7 @@ import { clinicData } from '../data/config';
 import AppointmentModal from '../components/AppointmentModal';
 import PageTransition from '../components/PageTransition';
 import AnimatedCounter from '../components/AnimatedCounter';
+import { TestimonialCarousel } from '../components/ui/profile-card-testimonial-carousel';
 
 const iconMap: Record<string, any> = {
   Stethoscope, Sparkles, Smile, Activity, Baby, HeartPulse
@@ -260,20 +261,19 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
               <h2 className="text-blue-600 font-bold tracking-wider uppercase mb-3">Our Expertise</h2>
-              <h3 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6">Comprehensive Dental Services</h3>
+              <h3 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6">Our Specialization Treatments</h3>
               <p className="text-base md:text-lg text-slate-600">Advanced treatments tailored to your unique needs, delivered with care and precision.</p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {clinicData.services.slice(0, 5).map((service, i) => {
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {clinicData.services.map((service, i) => {
                 const Icon = iconMap[service.icon] || Star;
-                const isLarge = i === 0 || i === 4;
                 
                 return (
                   <motion.div 
                     key={service.id} 
                     whileHover={{ y: -8, scale: 1.02 }}
-                    className={`rounded-[2rem] p-6 md:p-8 flex flex-col relative overflow-hidden group border border-slate-100 shadow-sm hover:shadow-xl transition-all ${isLarge ? 'md:col-span-2' : 'col-span-1'} ${service.color.split(' ')[0]} bg-opacity-20`}
+                    className={`rounded-[2rem] p-6 md:p-8 flex flex-col relative overflow-hidden group border border-slate-100 shadow-sm hover:shadow-xl transition-all col-span-1 ${service.color.split(' ')[0]} bg-opacity-20`}
                   >
                     <div className="absolute top-0 right-0 -mt-4 -mr-4 w-32 h-32 bg-white/40 rounded-full blur-2xl group-hover:bg-white/60 transition-all"></div>
                     <div className={`w-14 h-14 md:w-16 md:h-16 rounded-2xl flex items-center justify-center mb-6 bg-white shadow-sm ${service.color.split(' ')[1]}`}>
@@ -290,7 +290,7 @@ export default function Home() {
               
               <motion.div 
                 whileHover={{ y: -8, scale: 1.02 }}
-                className="rounded-[2rem] p-6 md:p-8 flex flex-col justify-center items-center text-center bg-slate-900 text-white col-span-1 md:col-span-3 lg:col-span-1 shadow-xl"
+                className="rounded-[2rem] p-6 md:p-8 flex flex-col justify-center items-center text-center bg-slate-900 text-white col-span-1 md:col-span-2 lg:col-span-3 shadow-xl"
               >
                 <h3 className="text-xl md:text-2xl font-bold mb-4">Need something else?</h3>
                 <p className="text-slate-400 mb-8 text-sm md:text-base">We offer a wide range of specialized treatments.</p>
@@ -365,42 +365,11 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
               <h2 className="text-blue-600 font-bold tracking-wider uppercase mb-3">Our Experts</h2>
-              <h3 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6">Meet Your Dentists</h3>
+              <h3 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6">Meet Our Specialist Team</h3>
               <p className="text-base md:text-lg text-slate-600">Highly qualified specialists dedicated to providing the best care possible.</p>
             </div>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-              {clinicData.dentists.map((dentist, i) => (
-                <motion.div 
-                  key={i}
-                  whileHover={{ y: -10 }}
-                  className="bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all border border-slate-100 group flex flex-col"
-                >
-                  <div className="h-56 md:h-64 overflow-hidden relative">
-                    <img src={dentist.image} alt={dentist.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                      <motion.button 
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        onClick={() => setIsModalOpen(true)} 
-                        className="w-full py-3 bg-blue-600 text-white rounded-xl font-bold hover:bg-blue-700 transition-colors"
-                      >
-                        Book with {dentist.name.split(' ')[1]}
-                      </motion.button>
-                    </div>
-                  </div>
-                  <div className="p-6 md:p-8 flex-grow flex flex-col">
-                    <h4 className="text-xl md:text-2xl font-bold text-slate-900 mb-1">{dentist.name}</h4>
-                    <p className="text-blue-600 font-semibold mb-4 text-sm md:text-base">{dentist.qualifications}</p>
-                    <p className="text-slate-600 mb-6 flex-grow text-sm md:text-base">{dentist.description}</p>
-                    <div className="flex items-center text-xs md:text-sm font-bold text-slate-500 bg-slate-50 inline-flex px-4 py-2 rounded-lg w-fit">
-                      <Award className="w-4 h-4 mr-2 text-yellow-500" />
-                      {dentist.experience} Experience
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+            <TestimonialCarousel />
           </div>
         </section>
 

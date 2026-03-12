@@ -12,6 +12,7 @@ export default function Navbar() {
 
   const navLinks = [
     { name: 'Home', path: '/' },
+    { name: 'About Us', path: '/about' },
     { name: 'Services', path: '/services' },
     { name: 'For Kids', path: '/kids' },
     { name: 'Contact', path: '/contact' },
@@ -26,7 +27,7 @@ export default function Navbar() {
           <div className="flex justify-between h-20">
             <div className="flex items-center">
               <Link to="/" className="flex-shrink-0 flex items-center">
-                <Logo className="w-10 h-10" textClassName="text-2xl" />
+                <Logo className="h-12" />
               </Link>
             </div>
             

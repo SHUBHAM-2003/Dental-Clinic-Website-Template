@@ -1,1 +1,21 @@
 @import "tailwindcss";
+
+@theme {
+  --color-blue-50: #fef1f5;
+  --color-blue-100: #fde5eb;
+  --color-blue-200: #facdd9;
+  --color-blue-300: #f49cbc;
+  --color-blue-400: #ec668d;
+  --color-blue-500: #e03b68;
+  --color-blue-600: #c9214f;
+  --color-blue-700: #a8163e;
+  --color-blue-800: #8d1637;
+  --color-blue-900: #761631;
+  --color-blue-950: #420817;
+}
+
+@layer base {
+  html {
+    font-size: 14px;
+  }
+}

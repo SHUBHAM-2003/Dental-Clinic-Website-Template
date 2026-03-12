@@ -65,7 +65,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-slate-900 mb-2">Visit Us</h3>
-                    <p className="text-slate-600 leading-relaxed text-lg">{clinicData.address}</p>
+                    <p className="text-slate-600 leading-relaxed text-lg">307, Akshaydeep Plaza, Near CIDCO Bus Stand, Nagpur-Aurangabad-Mumbai Hwy, Cidco, Aurangabad, Maharashtra 431003</p>
                   </div>
                 </div>
 
@@ -75,7 +75,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-slate-900 mb-2">Call Us</h3>
-                    <p className="text-slate-600 text-lg font-medium">{clinicData.phone}</p>
+                    <p className="text-slate-600 text-lg font-medium">0240 248 5832</p>
                     <p className="text-sm text-slate-500 mt-1">For emergencies, call us directly.</p>
                   </div>
                 </div>
@@ -86,7 +86,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-slate-900 mb-2">Email Us</h3>
-                    <p className="text-slate-600 text-lg">{clinicData.email}</p>
+                    <p className="text-slate-600 text-lg">smilecareindia@gmail.com</p>
                   </div>
                 </div>
 
@@ -96,7 +96,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-slate-900 mb-2">Working Hours</h3>
-                    <p className="text-slate-600 text-lg">{clinicData.workingHours}</p>
+                    <p className="text-slate-600 text-lg">Mon–Sat: 10:30 AM–1:00 PM and 4:00 PM–8:00 PM | Sunday: Closed</p>
                   </div>
                 </div>
               </div>
@@ -130,29 +130,29 @@ export default function Contact() {
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
-                        <label htmlFor="firstName" className="block text-sm font-bold text-slate-700 mb-2">First Name</label>
-                        <input type="text" id="firstName" required className="w-full border border-slate-200 bg-slate-50 rounded-xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all" placeholder="John" />
+                        <label htmlFor="name" className="block text-sm font-bold text-slate-700 mb-2">Name</label>
+                        <input type="text" id="name" required className="w-full border border-slate-200 bg-slate-50 rounded-xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all" placeholder="John Doe" />
                       </div>
                       <div>
-                        <label htmlFor="lastName" className="block text-sm font-bold text-slate-700 mb-2">Last Name</label>
-                        <input type="text" id="lastName" required className="w-full border border-slate-200 bg-slate-50 rounded-xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all" placeholder="Doe" />
+                        <label htmlFor="contactNo" className="block text-sm font-bold text-slate-700 mb-2">Contact No</label>
+                        <input type="tel" id="contactNo" required className="w-full border border-slate-200 bg-slate-50 rounded-xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all" placeholder="Your Phone Number" />
                       </div>
                     </div>
                     
                     <div>
-                      <label htmlFor="email" className="block text-sm font-bold text-slate-700 mb-2">Email Address</label>
-                      <input type="email" id="email" required className="w-full border border-slate-200 bg-slate-50 rounded-xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all" placeholder="john@example.com" />
+                      <label htmlFor="reason" className="block text-sm font-bold text-slate-700 mb-2">Reason</label>
+                      <input type="text" id="reason" required className="w-full border border-slate-200 bg-slate-50 rounded-xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all" placeholder="Reason for contact" />
                     </div>
 
                     <div>
-                      <label htmlFor="message" className="block text-sm font-bold text-slate-700 mb-2">Message</label>
-                      <textarea id="message" rows={5} required className="w-full border border-slate-200 bg-slate-50 rounded-xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all resize-none" placeholder="How can we help you?"></textarea>
+                      <label htmlFor="comment" className="block text-sm font-bold text-slate-700 mb-2">Comment</label>
+                      <textarea id="comment" rows={5} required className="w-full border border-slate-200 bg-slate-50 rounded-xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all resize-none" placeholder="How can we help you?"></textarea>
                     </div>
 
                     <button
                       type="submit"
                       disabled={formStatus === 'submitting'}
-                      className="w-full flex items-center justify-center px-8 py-5 bg-blue-600 text-white rounded-xl font-bold text-xl hover:bg-blue-700 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 disabled:opacity-70 disabled:hover:translate-y-0 cursor-pointer"
+                      className="w-full flex items-center justify-center px-8 py-5 bg-blue-600 text-white rounded-xl font-bold text-xl hover:bg-blue-700 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 disabled:opacity-70 disabled:hover:translate-y-0 cursor-pointer uppercase tracking-wider"
                     >
                       {formStatus === 'submitting' ? (
                         <motion.div
@@ -161,7 +161,7 @@ export default function Contact() {
                           className="w-6 h-6 border-2 border-white border-t-transparent rounded-full mr-3"
                         />
                       ) : null}
-                      {formStatus === 'submitting' ? 'Sending...' : 'Send Message'}
+                      {formStatus === 'submitting' ? 'Sending...' : 'SEND'}
                     </button>
                   </form>
                 )}
